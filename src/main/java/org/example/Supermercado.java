@@ -44,11 +44,10 @@ public class Supermercado {
     }
 
     public Producto buscarProducto(String idProducto){
-        try{
+        if (inventario.containsKey(idProducto)) {
             return inventario.get(idProducto);
-        }
-        catch (Exception e) {
-            System.out.println("Error interno o producto no encontrado.");
+        } else {
+            System.out.println("Producto no encontrado.");
             return null;
         }
     }
